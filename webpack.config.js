@@ -30,10 +30,15 @@ module.exports = {
         test: /\.svg$/,
         loader: "svg-inline-loader",
       },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      },
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".mjs", ".gql", ".graphql"],
     alias: {
       "react-dom": "@hot-loader/react-dom",
     },
