@@ -6,5 +6,21 @@
 			"service": "Lambda",
 			"dependsOn": []
 		}
+	},
+	"api": {
+		"cryptoapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "cryptofunction",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
 	}
 }
